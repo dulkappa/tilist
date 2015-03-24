@@ -1,0 +1,14 @@
+doctype html
+html(ng-app='tilist')
+	head
+		title tilist
+		link(rel='stylesheet' type='text/css' href='./css/main.css')
+	body(ng-controller='IndexCtrl')
+		.wrapper
+			.header
+				h1 {{ title }}
+				p {{ hw }}
+		
+		script(type='text/javascript' src='./js/components.js')
+		script(type='text/javascript' src='./js/main.js')
+		script(type='text/javascript' src='./js/templates.js')
