@@ -4,6 +4,17 @@ var jade = require('gulp-jade');
 var plumber = require('gulp-plumber');
 var webserver = require('gulp-webserver');
 
+gulp.task('components', function(){
+	
+	gulp
+	.src([
+		'bower_components/angular/angular.js'
+	])
+	.pipe(concat('components.js'))
+	.pipe(gulp.dest('dist/js/'));
+	
+});
+
 gulp.task('scripts', function(){
 
 	gulp
@@ -27,7 +38,7 @@ gulp.task('jade', function(){
 
 });
 
-gulp.task('webserver', ['jade', 'scripts'], function(){
+gulp.task('webserver', ['jade', 'components', 'scripts'], function(){
 
 	gulp
 	.src('./dist')
