@@ -1,14 +1,18 @@
 var gulp = require('gulp');
+var concat = require('gulp-concat');
 var jade = require('gulp-jade');
 var plumber = require('gulp-plumber');
 var webserver = require('gulp-webserver');
 
 gulp.task('scripts', function(){
+
+	gulp
 	.src([
 		'./src/main.js',
 		'./src/**/*.js'
 	])
 	.pipe(plumber())
+	.pipe(concat('main.js'))
 	.pipe(gulp.dest('dist/js/'));
 	
 });
@@ -19,12 +23,11 @@ gulp.task('jade', function(){
 	.src('./templates/jade/index.jade')
 	.pipe(plumber())
 	.pipe(jade())
-	.pipe(gulp.dest('dist/'))
-	;
+	.pipe(gulp.dest('dist/'));
 
 });
 
-gulp.task('webserver', ['jade'], function(){
+gulp.task('webserver', ['jade', 'scripts'], function(){
 
 	gulp
 	.src('./dist')
