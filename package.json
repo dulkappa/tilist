@@ -1,0 +1,25 @@
+{
+  "name": "tilist",
+  "version": "0.0.1",
+  "description": "a simple todo application.",
+  "main": "",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/dulkappa/tilist.git"
+  },
+  "author": "dulkappa",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/dulkappa/tilist/issues"
+  },
+  "homepage": "https://github.com/dulkappa/tilist",
+  "devDependencies": {
+    "gulp": "^3.8.11",
+    "gulp-jade": "^1.0.0",
+    "gulp-plumber": "^1.0.0",
+    "gulp-webserver": "^0.9.0"
+  }
+}
