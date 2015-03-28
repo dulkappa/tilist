@@ -1,14 +1,24 @@
 doctype html
 html(ng-app='tilist')
-	head
-		title tilist
-		link(rel='stylesheet' type='text/css' href='./css/main.css')
-	body(ng-controller='IndexCtrl')
-		.wrapper
-			.header
-				h1 {{ title }}
-				p {{ hw }}
-		
-		script(type='text/javascript' src='./js/components.js')
-		script(type='text/javascript' src='./js/main.js')
-		script(type='text/javascript' src='./js/templates.js')
+  head
+    title tilist
+    link(rel='stylesheet' type='text/css' href='./css/main.css')
+
+  body(ng-controller='IndexCtrl')
+    .wrapper
+      .header
+        h1 {{ title }}
+        p {{ hw }}
+
+        h2 tiles
+        div(ng-controller='TilistCtrl')
+          span {{ remaining() }} of {{ tiles.length }} remaining.
+
+          ul
+            li(ng-repeat='tile in tiles')
+              input(type='checkbox' ng-model='tile.done')
+              span {{ tile.text }}
+
+    script(type='text/javascript' src='./js/components.js')
+    script(type='text/javascript' src='./js/main.js')
+    script(type='text/javascript' src='./js/templates.js')
