@@ -10,6 +10,11 @@ angular
 	    {text: 'study MCSA:70-412', done: false}
 	];
 
+	$scope.addTile = function(){
+	    $scope.tiles.push({text: $scope.tileText, done:false});
+	    $scope.tileText = '';
+	};
+
 	$scope.remaining = function(){
 	    var count = 0;
 	    angular.forEach($scope.tiles, function(tile){
