@@ -9,11 +9,19 @@ gulp.task('components', function(){
     
     gulp
 	.src([
-	    'bower_components/angular/angular.js'
+	    'bower_components/angular/angular.js',
+	    'bower_components/jquery/dist/jquery.js',
+	    'bower_components/jquery-ui/jquery-ui.min.js'
 	])
 	.pipe(concat('components.js'))
 	.pipe(gulp.dest('dist/js/'));
-	
+
+   gulp
+	.src(['bower_components/jquery-ui/themes/base/jquery-ui.min.css'])
+	.pipe(plumber())
+	.pipe(concat('components.css'))
+	.pipe(gulp.dest('dist/css/'));
+
 });
 
 gulp.task('scripts', function(){

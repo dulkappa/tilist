@@ -3,6 +3,7 @@ html(lang='ja' ng-app='tilist')
   head
     title tilist
     link(rel='stylesheet' type='text/css' href='./css/main.css')
+    link(rel='stylesheet' type='text/css' href='./css/components.css')
 
   body(ng-controller='IndexCtrl')
     .wrapper
@@ -14,10 +15,12 @@ html(lang='ja' ng-app='tilist')
         div(ng-controller='TilistCtrl')
           span {{ remaining() }} of {{ tiles.length }} remaining.
 
-          ul
-            li(ng-repeat='tile in tiles')
+          ul(class='tiles' id='jquery-ui-sortable')
+            li(class='ui-state-default tile' ng-repeat='tile in tiles')
               input(type='checkbox' ng-model='tile.done')
               span(class='done-{{tile.done}}') {{ tile.text }}
+
+          div(class='clear-left')
 
           form(ng-submit='addTile()')
             input(type='text' ng-model='tileText' size='40' placeholder='input tile name...')
