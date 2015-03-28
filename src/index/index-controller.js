@@ -9,12 +9,13 @@ angular
 	    // use as todo list
 	    // {text: 'learn angular', done: true},
 	    // use as member list
-	    {text: 'Shintaro Ishikawa', done: false}
+	    {text: 'dulkappa', done: false}
 	];
 
 	$scope.addTile = function(){
 	    $scope.tiles.push({text: $scope.tileText, done:false});
 	    $scope.tileText = '';
+	    console.log($scope.tiles);
 	};
 
 	$scope.toggleTile = function(tile){
