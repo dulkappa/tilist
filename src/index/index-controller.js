@@ -6,8 +6,10 @@ angular
     })
     .controller('TilistCtrl', function($scope){
 	$scope.tiles = [
-	    {text: 'learn angular', done: true},
-	    {text: 'study MCSA:70-412', done: false}
+	    // use as todo list
+	    // {text: 'learn angular', done: true},
+	    // use as member list
+	    {text: 'Shintaro Ishikawa', done: false}
 	];
 
 	$scope.addTile = function(){
@@ -17,6 +19,18 @@ angular
 
 	$scope.toggleTile = function(tile){
 	    tile.done = ! tile.done;
+	};
+
+	$scope.deleteTile = function(i){
+	    $scope.tiles.splice(i, 1);
+	};
+
+	$scope.completed = function(){
+	    var count = 0;
+	    angular.forEach($scope.tiles, function(tile){
+		count += tile.done ? 1 : 0;
+	    });
+	    return count;
 	};
 
 	$scope.remaining = function(){

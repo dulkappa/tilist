@@ -13,11 +13,14 @@ html(lang='ja' ng-app='tilist')
 
         h2 tiles
         div(ng-controller='TilistCtrl')
+          span {{ completed() }} completed.
+          br
           span {{ remaining() }} of {{ tiles.length }} remaining.
 
           ul(class='tiles' id='jquery-ui-sortable')
             li(class='tile done-{{tile.done}} ui-state-default' ng-repeat='tile in tiles' ng-click='toggleTile(tile)')
               span(class='done-{{tile.done}}') {{ tile.text }}
+              button(ng-click='deleteTile($index)') x
 
           div(class='clear-left')
 
