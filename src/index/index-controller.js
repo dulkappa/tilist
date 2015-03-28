@@ -15,6 +15,10 @@ angular
 	    $scope.tileText = '';
 	};
 
+	$scope.toggleTile = function(tile){
+	    tile.done = ! tile.done;
+	};
+
 	$scope.remaining = function(){
 	    var count = 0;
 	    angular.forEach($scope.tiles, function(tile){
