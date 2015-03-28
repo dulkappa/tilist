@@ -1,5 +1,5 @@
 doctype html
-html(ng-app='tilist')
+html(lang='ja' ng-app='tilist')
   head
     title tilist
     link(rel='stylesheet' type='text/css' href='./css/main.css')
@@ -17,7 +17,7 @@ html(ng-app='tilist')
           ul
             li(ng-repeat='tile in tiles')
               input(type='checkbox' ng-model='tile.done')
-              span {{ tile.text }}
+              span(class='done-{{tile.done}}') {{ tile.text }}
 
           form(ng-submit='addTile()')
             input(type='text' ng-model='tileText' size='40' placeholder='input tile name...')
@@ -25,4 +25,4 @@ html(ng-app='tilist')
 
     script(type='text/javascript' src='./js/components.js')
     script(type='text/javascript' src='./js/main.js')
-    script(type='text/javascript' src='./js/templates.js')
+    <!-- script(type='text/javascript' src='./js/templates.js') -->

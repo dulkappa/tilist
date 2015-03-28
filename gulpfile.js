@@ -1,6 +1,7 @@
 var gulp = require('gulp');
 var concat = require('gulp-concat');
 var jade = require('gulp-jade');
+var stylus = require('gulp-stylus');
 var plumber = require('gulp-plumber');
 var webserver = require('gulp-webserver');
 
@@ -28,6 +29,18 @@ gulp.task('scripts', function(){
 	
 });
 
+gulp.task('stylus', function(){
+
+    gulp
+	.src(['./templates/stylus/main.styl'])
+	.pipe(plumber())
+	.pipe(stylus({
+	    compress: true
+	}))
+	.pipe(gulp.dest('dist/css/'));
+
+});
+
 gulp.task('jade', function(){
 	
     gulp
@@ -38,7 +51,7 @@ gulp.task('jade', function(){
 
 });
 
-gulp.task('webserver', ['jade', 'components', 'scripts'], function(){
+gulp.task('webserver', ['stylus', 'jade', 'components', 'scripts'], function(){
     
     gulp
 	.src('./dist')
@@ -49,6 +62,7 @@ gulp.task('webserver', ['jade', 'components', 'scripts'], function(){
 	    })
 	);
     
+    gulp.watch('templates/stylus/**/*', ['stylus']);
     gulp.watch('templates/jade/**/*', ['jade']);
     gulp.watch('src/**/*', ['scripts']);
     gulp.watch('components.*', ['components']);
