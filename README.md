@@ -2,9 +2,9 @@
 It is a simple todo application.
 
 ## Function
-- [x] クリックするとタイルの背景と文字の濃淡が入れ替わる
-- [ ] `＋`を押すとポップアップが出てきて、タイルを増やす~~
-  - [x] とりあえずはフォームで追加する形に
+- If you click a tile, background color and font color are replaced with each other.
+- [ ] You can add a new tile when you click a `+` tile.
+  - [x] Add tile by using form.
 - [ ] 右クリックするとタイルを消去できる
   - [ ] 右クリックだとわかりにくいので削除ボタンを追加した(要検討)
 - [x] ドラッグ＆ドロップで順番を変更できる
