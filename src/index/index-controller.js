@@ -9,21 +9,32 @@ angular
 	    // use as todo list
 	    // {text: 'learn angular', done: true},
 	    // use as member list
-	    {text: 'dulkappa', done: false}
+	    // {text: 'dulkappa', done: false}
 	];
+	for (var i = 0; i < localStorage.length; i++){
+	    var k = localStorage.key(i);
+	    var d = JSON.parse(localStorage.getItem(k));
+	    $scope.tiles.push(d);
+	};
 
 	$scope.addTile = function(){
-	    $scope.tiles.push({text: $scope.tileText, done:false});
+	    var tile = {text: $scope.tileText, done:false};
+	    $scope.tiles.push(tile);
+	    localStorage.setItem($scope.tileText, JSON.stringify(tile));
 	    $scope.tileText = '';
-	    console.log($scope.tiles);
 	};
 
 	$scope.toggleTile = function(tile){
 	    tile.done = ! tile.done;
+	    localStorage.setItem(tile.text, JSON.stringify(tile));
 	};
 
 	$scope.deleteTile = function(i){
+	    localStorage.removeItem($scope.tiles[i].text);
+	    console.log($scope.tiles[i].text);
 	    $scope.tiles.splice(i, 1);
+
+
 	};
 
 	$scope.completed = function(){
