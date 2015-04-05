@@ -1,4 +1,4 @@
 $(function(){
-    $('#jquery-ui-sortable').sortable();
-    $('#jquety-ui-sortable').disableSelection();
+  $('#jquery-ui-sortable').sortable();
+  $('#jquety-ui-sortable').disableSelection();
 });
