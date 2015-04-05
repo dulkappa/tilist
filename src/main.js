@@ -3,5 +3,5 @@ angular
   .config(function(){})
   .run(function(){})
   .constant('settingConst', {
-		'title': 'tilist'
+    'title': 'tilist'
   });
