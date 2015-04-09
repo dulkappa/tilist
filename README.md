@@ -2,19 +2,19 @@
 It is a simple todo application by angular.
 
 ## issue
--[ ] use bootstrap.
--[ ] can select tile color.
--[ ] can edit tile name.
--[ ] correspond to ui-sortable.
--[ ] refactoring.
--[ ] can delete tile by right-click(hide [x]-button).
--[ ] validate input string.
--[ ] grouping.
--[ ] change design.
--[ ] use DB.
--[ ] use OAuth certification.
--[ ] implement sorting.
--[ ] implement limitd view(head/tail 3 items).
+- [ ] use bootstrap.
+- [ ] can select tile color.
+- [ ] can edit tile name.
+- [ ] correspond to ui-sortable.
+- [ ] refactoring.
+- [ ] can delete tile by right-click(hide [x]-button).
+- [ ] validate input string.
+- [ ] grouping.
+- [ ] change design.
+- [ ] use DB.
+- [ ] use OAuth certification.
+- [ ] implement sorting.
+- [ ] implement limitd view(head/tail 3 items).
 
 ## Development
 tilist requires to be installed gulp before running.
