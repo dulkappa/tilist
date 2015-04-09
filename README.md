@@ -1,15 +1,20 @@
 # tilist
-It is a simple todo application.
+It is a simple todo application by angular.
 
-## Function
-- If you click a tile, background color and font color are replaced with each other.
-- [ ] You can add a new tile when you click a `+` tile.
-  - [x] Add tile by using form.
-- [ ] 右クリックするとタイルを消去できる
-  - [ ] 右クリックだとわかりにくいので削除ボタンを追加した(要検討)
-- [x] ドラッグ＆ドロップで順番を変更できる
-  - [ ] Angular側でリストの順番変更を扱えていない([angular-ui/ui-sortable](https://github.com/angular-ui/ui-sortable)を参考にする)
-- [ ] localstrageにしろDBにしろ、データを保存する方法を考える
+## issue
+- [ ]use bootstrap.
+- [ ]can select tile color.
+- [ ]can edit tile name.
+- [ ]correspond to ui-sortable.
+- [ ]refactoring.
+- [ ]can delete tile by right-click(hide [x]-button).
+- [ ]validate input string.
+- [ ]grouping.
+- [ ]change design.
+- [ ]use DB.
+- [ ]use OAuth certification.
+- [ ]implement sorting.
+- [ ]implement limitd view(head/tail 3 items).
 
 ## Development
 tilist requires to be installed gulp before running.
