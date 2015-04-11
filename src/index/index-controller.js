@@ -5,6 +5,16 @@ angular
     $scope.hw = 'hello, world!';
   })
   .factory('IndexService', function(){
+    addTile = function(tileText){
+      var tile = {text: tileText, done:false};
+
+      return tile;
+    };
+
+    toggleTile = function(tile){
+      tile.done = ! tile.done;
+    };
+
     return {
       getTiles: function(){
         return JSON.parse(localStorage.getItem('tilist_tiles')) || [];
@@ -12,23 +22,32 @@ angular
 
       setTiles: function(tiles){
         return localStorage.setItem('tilist_tiles', JSON.stringify(tiles));
-      }
+      },
+
+      addTile: addTile,
+
+      toggleTile: toggleTile
+
     }
   })
   .controller('TilistCtrl', function($scope, IndexService){
     $scope.tiles = [];
-
     $scope.tiles = IndexService.getTiles();
 
     $scope.addTile = function(){
-      var tile = {text: $scope.tileText, done:false};
+      var text = $scope.tileText;
+      // validation
+
+      var tile = IndexService.addTile(text);
+
       $scope.tiles.push(tile);
       IndexService.setTiles($scope.tiles);
+
       $scope.tileText = '';
     };
 
     $scope.toggleTile = function(tile){
-      tile.done = ! tile.done;
+      IndexService.toggleTile(tile);
       IndexService.setTiles($scope.tiles);
     };
 
@@ -52,5 +71,4 @@ angular
       });
       return count;
     };
-
   });
