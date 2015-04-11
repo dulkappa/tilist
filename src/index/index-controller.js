@@ -34,9 +34,14 @@ angular
     $scope.tiles = [];
     $scope.tiles = IndexService.getTiles();
 
+    $scope.sortableOptions = {
+      stop: function(){
+        IndexService.setTiles($scope.tiles);
+      }
+    };
+
     $scope.addTile = function(){
       var text = $scope.tileText;
-      // validation
 
       var tile = IndexService.addTile(text);
 

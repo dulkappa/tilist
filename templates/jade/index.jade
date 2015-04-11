@@ -17,8 +17,8 @@ html(lang='ja' ng-app='tilist')
           br
           span {{ remaining() }} of {{ tiles.length }} remaining.
 
-          ul(class='tiles' id='jquery-ui-sortable')
-            li(class='tile done-{{tile.done}} ui-state-default' ng-repeat='tile in tiles' ng-click='toggleTile(tile)')
+          ul(class='tiles' ui-sortable='sortableOptions' ng-model='tiles')
+            li(class='tile done-{{tile.done}}' ng-repeat='tile in tiles track by $index' ng-click='toggleTile(tile)')
               span(class='done-{{tile.done}}') {{ tile.text }}
               button(ng-click='deleteTile($index)') x
 

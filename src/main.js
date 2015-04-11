@@ -1,5 +1,5 @@
 angular
-  .module('tilist', [])
+  .module('tilist', ['ui.sortable'])
   .config(function(){})
   .run(function(){})
   .constant('settingConst', {
