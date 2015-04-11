@@ -4,30 +4,37 @@ angular
     $scope.title = settingConst.title;
     $scope.hw = 'hello, world!';
   })
-  .controller('TilistCtrl', function($scope){
+  .factory('IndexService', function(){
+    return {
+      getTiles: function(){
+        return JSON.parse(localStorage.getItem('tilist_tiles')) || [];
+      },
+
+      setTiles: function(tiles){
+        return localStorage.setItem('tilist_tiles', JSON.stringify(tiles));
+      }
+    }
+  })
+  .controller('TilistCtrl', function($scope, IndexService){
     $scope.tiles = [];
-    for (var i = 0; i < localStorage.length; i++){
-      var k = localStorage.key(i);
-      var d = JSON.parse(localStorage.getItem(k));
-      $scope.tiles.push(d);
-    };
+
+    $scope.tiles = IndexService.getTiles();
 
     $scope.addTile = function(){
       var tile = {text: $scope.tileText, done:false};
       $scope.tiles.push(tile);
-      localStorage.setItem($scope.tileText, JSON.stringify(tile));
+      IndexService.setTiles($scope.tiles);
       $scope.tileText = '';
     };
 
     $scope.toggleTile = function(tile){
       tile.done = ! tile.done;
-      localStorage.setItem(tile.text, JSON.stringify(tile));
+      IndexService.setTiles($scope.tiles);
     };
 
     $scope.deleteTile = function(i){
-      localStorage.removeItem($scope.tiles[i].text);
-      console.log($scope.tiles[i].text);
       $scope.tiles.splice(i, 1);
+      IndexService.setTiles($scope.tiles);
     };
 
     $scope.completed = function(){
