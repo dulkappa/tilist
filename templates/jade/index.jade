@@ -24,9 +24,9 @@ html(lang='ja' ng-app='tilist')
 
           div(class='clear-left')
 
-          form(ng-submit='addTile()')
-            input(type='text' ng-model='tileText' size='40' placeholder='input tile name...')
-            input(type='submit' value='add')
+          form(name='tileRegistrationForm' ng-submit='addTile()' novalidate)
+            input(type='text' name='tileText' ng-model='tileText' size='40' placeholder='input tile name...' required)
+            input(type='submit' value='add' ng-disabled='tileRegistrationForm.$invalid')
 
     script(type='text/javascript' src='./js/components.js')
     script(type='text/javascript' src='./js/main.js')

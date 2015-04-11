@@ -6,9 +6,9 @@ It is a simple todo application by angular.
 - [ ] can select tile color.
 - [ ] can edit tile name.
 - [ ] correspond to ui-sortable.
-- [ ] refactoring.
+- [x] refactoring.
 - [ ] can delete tile by right-click(hide [x]-button).
-- [ ] validate input string.
+- [x] validate input string.
 - [ ] grouping.
 - [ ] change design.
 - [ ] use DB.
