@@ -21,7 +21,6 @@ angular
       },
 
       setTiles: function(tiles){
-        console.log(tiles);
         return localStorage.setItem('tilist_tiles', JSON.stringify(tiles));
       },
 

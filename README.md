@@ -5,7 +5,7 @@ It is a simple todo application by angular.
 - [ ] use bootstrap.
 - [ ] can select tile color.
 - [ ] can edit tile name.
-- [ ] correspond to ui-sortable.
+- [x] correspond to ui-sortable.
 - [x] refactoring.
 - [ ] can delete tile by right-click(hide [x]-button).
 - [x] validate input string.
