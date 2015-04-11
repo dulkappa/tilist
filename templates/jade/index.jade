@@ -20,7 +20,7 @@ html(lang='ja' ng-app='tilist')
           ul(class='tiles' ui-sortable='sortableOptions' ng-model='tiles')
             li(class='tile done-{{tile.done}}' ng-repeat='tile in tiles track by $index' ng-click='toggleTile(tile)')
               span(class='done-{{tile.done}}') {{ tile.text }}
-              button(ng-click='deleteTile($index)') x
+              button(ng-click='deleteTile(i, $event);') x
 
           div(class='clear-left')
 

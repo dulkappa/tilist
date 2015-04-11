@@ -21,6 +21,7 @@ angular
       },
 
       setTiles: function(tiles){
+        console.log(tiles);
         return localStorage.setItem('tilist_tiles', JSON.stringify(tiles));
       },
 
@@ -51,13 +52,14 @@ angular
       $scope.tileText = '';
     };
 
-    $scope.toggleTile = function(tile){
-      IndexService.toggleTile(tile);
+    $scope.deleteTile = function(i, e){
+      $scope.tiles.splice(i, 1);
       IndexService.setTiles($scope.tiles);
+      e.stopPropagation();
     };
 
-    $scope.deleteTile = function(i){
-      $scope.tiles.splice(i, 1);
+    $scope.toggleTile = function(tile){
+      IndexService.toggleTile(tile);
       IndexService.setTiles($scope.tiles);
     };
 
